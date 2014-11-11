@@ -50,15 +50,17 @@
 					current.fadeToggle(transistionTime);
 					next.delay(transistionTime).fadeToggle(transistionTime);
 					
-					var index = Math.round(Math.random() * sites.length);
-					var url = sites[index].url;
-					sites.splice(index, 1);
-					
-					console.log(url);
-					current.attr("src", url);
-					
-					if(sites.length == 0)
-						sites = window.sites.slice();
+					window.setTimeout(function() {
+						var index = Math.round(Math.random() * sites.length);
+						var url = sites[index].url;
+						sites.splice(index, 1);
+						
+						console.log(url);
+						current.attr("src", url);
+						
+						if(sites.length == 0)
+							sites = window.sites.slice();
+					}, transistionTime);
 					
 					showFrame1 = !showFrame1;
 				}, 7000);
