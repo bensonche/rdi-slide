@@ -51,7 +51,7 @@
 					next.delay(transistionTime).fadeToggle(transistionTime);
 					
 					var index = Math.round(Math.random() * sites.length);
-					var url = sites[index];
+					var url = sites[index].url;
 					sites.splice(index, 1);
 					
 					console.log(url);
