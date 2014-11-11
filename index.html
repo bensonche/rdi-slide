@@ -51,13 +51,18 @@
 					next.delay(transistionTime).fadeToggle(transistionTime);
 					
 					window.setTimeout(function() {
-						var index = Math.round(Math.random() * sites.length);
-						var url = sites[index].url;
+						// Make sure 2 pages don't repeat
+						do {
+							var index = Math.round(Math.random() * sites.length);
+							var url = sites[index].url;
+						} while (next.attr("src") == url);
+						
 						sites.splice(index, 1);
 						
 						console.log(url);
-						console.log(current.attr("src"));
+						console.log(next.attr("src"));
 						console.log("");
+						
 						current.attr("src", url);
 						
 						if(sites.length == 0)
