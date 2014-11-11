@@ -54,7 +54,6 @@
 						// Make sure 2 pages don't repeat
 						do {
 							var index = parseInt(Math.random() * sites.length);
-							console.log(index);
 							var url = sites[index].url;
 						} while (next.attr("src") == url);
 						
