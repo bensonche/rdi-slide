@@ -30,6 +30,7 @@
 				url: "http://bensonche.github.io/rdi-slide/rdiurllist.json",
 				processData: false,
 				success: function(result) {
+					console.log(result);
 					window.sites = true;//eval("(" + result + ")");//.sites;
 					//processSites(window.sites.slice());
 				}
